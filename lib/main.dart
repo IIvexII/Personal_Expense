@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+
 import './transection.dart';
 
 void main() => runApp(PersonalExpense());
@@ -32,6 +33,9 @@ class MyHomePage extends StatelessWidget {
     )
   ];
 
+  final titleControler = TextEditingController();
+  final amountControler = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,7 +43,6 @@ class MyHomePage extends StatelessWidget {
           title: Text('Personal Expenses'),
         ),
         body: Column(
-          // mainAxisAlignment: MainAxisAlignment.spaceAround,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             Card(
@@ -53,6 +56,35 @@ class MyHomePage extends StatelessWidget {
                 textAlign: TextAlign.center,
               ),
               elevation: 20,
+            ),
+            Card(
+              child: Container(
+                margin: EdgeInsets.fromLTRB(5, 20, 5, 20),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: <Widget>[
+                    TextField(
+                      decoration: InputDecoration(labelText: 'Title'),
+                      controller: titleControler,
+                    ),
+                    TextField(
+                      decoration: InputDecoration(labelText: 'Amount'),
+                      controller: amountControler,
+                    ),
+                    FlatButton(
+                      child: Text(
+                        'Add Transection',
+                        style: TextStyle(
+                          color: Colors.purple,
+                        ),
+                      ),
+                      onPressed: () {
+                        print(titleControler.text);
+                      },
+                    ),
+                  ],
+                ),
+              ),
             ),
             // List of Transections
             Column(
