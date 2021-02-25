@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 class NewTransection extends StatelessWidget {
   final _titleControler = TextEditingController();
   final _amountControler = TextEditingController();
+  final Function addNewTransection;
+
+  NewTransection(this.addNewTransection);
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +31,11 @@ class NewTransection extends StatelessWidget {
                 ),
               ),
               onPressed: () {
-                print(_titleControler.text);
+                addNewTransection(
+                  _titleControler.text,
+                  double.parse(_amountControler.text),
+                  '#DEMO123',
+                );
               },
             ),
           ],

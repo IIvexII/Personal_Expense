@@ -25,12 +25,24 @@ class _UserTransectionState extends State<UserTransection> {
     )
   ];
 
+  void _addNewTransection(String txTitle, double txAmount, String txId) {
+    final newTx = Transection(
+      title: txTitle,
+      amount: txAmount,
+      id: txId,
+      date: DateTime.now(),
+    );
+    setState(() {
+      _userTransections.add(newTx);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
         // New Transection Input
-        NewTransection(),
+        NewTransection(_addNewTransection),
         // List of Transections
         TransectionList(_userTransections),
       ],
