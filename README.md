@@ -1,7 +1,7 @@
 <div align="center">
   <img width="200px" src="https://raw.githubusercontent.com/IIvexII/Personal_Expense/main/assets/icon.png"/>
   <br />
-  <img src="https://img.shields.io/badge/flutter-1.22.6-blue?logo=gitpod?style=flat-square" />
+  <img src="https://img.shields.io/badge/flutter-1.22.6-blue?logo=gitpod&style=flat-square" />
   <img style="margin-left: 50px" src="https://img.shields.io/badge/Status-under%20developement-yellow?style=flat-square" />
   
 </div>
