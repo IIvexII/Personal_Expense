@@ -1,4 +1,10 @@
-# Personal_Expense (Under Construction:construction:)
+<div align="center">
+  <img width="200px" src="https://raw.githubusercontent.com/IIvexII/Personal_Expense/main/assets/icon.png"/>
+</div>
+
+# Personal_Expense
+
+> This app is under development :construction:
 
 Management of personal expenses is very difficult on paper :pencil: so, this app will help you keep a record of your expense  on your phone :iphone: and you can plan for an expense for future and it will remind you for that.
 
