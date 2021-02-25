@@ -1,7 +1,7 @@
 <div align="center">
   <img width="200px" src="https://raw.githubusercontent.com/IIvexII/Personal_Expense/main/assets/icon.png"/>
-  [![flutter version](https://img.shields.io/badge/flutter-1.22.6-blue?logo=gitpod)](https://github.com/IIvexII/Personal_Expense)
 </div>
+[![flutter version](https://img.shields.io/badge/flutter-1.22.6-blue?logo=gitpod)](https://github.com/IIvexII/Personal_Expense)
 
 # Personal_Expense
 
