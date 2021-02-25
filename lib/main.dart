@@ -1,7 +1,5 @@
+import 'package:Personal_Expense/widgets/userTransection.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
-
-import './transection.dart';
 
 void main() => runApp(PersonalExpense());
 
@@ -17,25 +15,6 @@ class PersonalExpense extends StatelessWidget {
 }
 
 class MyHomePage extends StatelessWidget {
-  // Demo transections
-  final List<Transection> transections = [
-    Transection(
-      id: 't1',
-      title: 'New Shoes',
-      amount: 400.00,
-      date: DateTime.now(),
-    ),
-    Transection(
-      id: 't2',
-      title: 'Mouse',
-      amount: 250.00,
-      date: DateTime.now(),
-    )
-  ];
-
-  final titleControler = TextEditingController();
-  final amountControler = TextEditingController();
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -57,96 +36,7 @@ class MyHomePage extends StatelessWidget {
               ),
               elevation: 20,
             ),
-            Card(
-              child: Container(
-                margin: EdgeInsets.fromLTRB(5, 20, 5, 20),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: <Widget>[
-                    TextField(
-                      decoration: InputDecoration(labelText: 'Title'),
-                      controller: titleControler,
-                    ),
-                    TextField(
-                      decoration: InputDecoration(labelText: 'Amount'),
-                      controller: amountControler,
-                    ),
-                    FlatButton(
-                      child: Text(
-                        'Add Transection',
-                        style: TextStyle(
-                          color: Colors.purple,
-                        ),
-                      ),
-                      onPressed: () {
-                        print(titleControler.text);
-                      },
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            // List of Transections
-            Column(
-              children: transections.map((tx) {
-                return Card(
-                  elevation: 5,
-                  child: Row(
-                    children: <Widget>[
-                      //----------Amount of Expense--------------
-                      Container(
-                        margin: EdgeInsets.all(20),
-                        padding: EdgeInsets.all(15),
-                        decoration: BoxDecoration(
-                          border: Border.all(
-                            color: Colors.purple,
-                            width: 2,
-                          ),
-                        ),
-                        child: Text(
-                          'Rs. ${tx.amount}',
-                          style: TextStyle(
-                            color: Colors.purple,
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ),
-                      //-----------------------------------------
-                      //---------Title and Date of expense-------
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
-                          //-------Title-------
-                          Container(
-                            margin: EdgeInsets.only(bottom: 10),
-                            child: Text(
-                              tx.title,
-                              style: TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ),
-                          //-----End Title-----
-                          //--------Date--------
-                          Container(
-                            child: Text(
-                              DateFormat.yMMMEd().add_jm().format(tx.date),
-                              style: TextStyle(
-                                color: Colors.grey,
-                              ),
-                            ),
-                          ),
-                          //------End Date------
-                        ],
-                      )
-                      //------------------------------------------
-                    ],
-                  ),
-                );
-              }).toList(),
-            )
+            UserTransection(),
           ],
         ));
   }
