@@ -7,6 +7,21 @@ class NewTransection extends StatelessWidget {
 
   NewTransection(this.addNewTransection);
 
+  void submitData() {
+    final enteredTitle = _titleControler.text;
+    final enteredAmount = double.parse(_amountControler.text);
+
+    // Check the validity
+    if (enteredTitle.isEmpty || enteredAmount <= 0) return;
+
+    // Add a transection
+    addNewTransection(
+      enteredTitle,
+      enteredAmount,
+      "#DEMO123",
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -18,10 +33,13 @@ class NewTransection extends StatelessWidget {
             TextField(
               decoration: InputDecoration(labelText: 'Title'),
               controller: _titleControler,
+              onSubmitted: (_) => submitData(),
             ),
             TextField(
               decoration: InputDecoration(labelText: 'Amount'),
               controller: _amountControler,
+              keyboardType: TextInputType.number,
+              onSubmitted: (_) => submitData(),
             ),
             FlatButton(
               child: Text(
@@ -30,13 +48,7 @@ class NewTransection extends StatelessWidget {
                   color: Colors.purple,
                 ),
               ),
-              onPressed: () {
-                addNewTransection(
-                  _titleControler.text,
-                  double.parse(_amountControler.text),
-                  '#DEMO123',
-                );
-              },
+              onPressed: submitData,
             ),
           ],
         ),
