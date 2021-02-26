@@ -43,18 +43,18 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   final List<Transection> _userTransections = [
-    Transection(
-      id: 't1',
-      title: 'New Shoes',
-      amount: 400.00,
-      date: DateTime.now(),
-    ),
-    Transection(
-      id: 't2',
-      title: 'Mouse',
-      amount: 250.00,
-      date: DateTime.now(),
-    )
+    // Transection(
+    //   id: 't1',
+    //   title: 'New Shoes',
+    //   amount: 400.00,
+    //   date: DateTime.now(),
+    // ),
+    // Transection(
+    //   id: 't2',
+    //   title: 'Mouse',
+    //   amount: 250.00,
+    //   date: DateTime.now(),
+    // )
   ];
 
   void _addNewTransection(String txTitle, double txAmount, String txId) {
