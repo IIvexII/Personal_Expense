@@ -52,10 +52,7 @@ class TransectionList extends StatelessWidget {
                       margin: EdgeInsets.only(bottom: 10),
                       child: Text(
                         _userTransections[index].title, // TITLE
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                        ),
+                        style: Theme.of(context).textTheme.headline6,
                       ),
                     ),
                     Container(

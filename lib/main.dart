@@ -1,8 +1,8 @@
-import 'package:Personal_Expense/widgets/transectionList.dart';
 import 'package:flutter/material.dart';
 
 import './widgets/newTransection.dart';
 import './modules/transection.dart';
+import './widgets/transectionList.dart';
 
 void main() => runApp(PersonalExpense());
 
@@ -13,9 +13,24 @@ class PersonalExpense extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Personal Expense',
       theme: ThemeData(
-        primarySwatch: Colors.amber,
-        accentColor: Colors.amberAccent,
-      ),
+          primarySwatch: Colors.amber,
+          accentColor: Colors.amberAccent,
+          fontFamily: 'Quicksand',
+          textTheme: ThemeData.light().textTheme.copyWith(
+                  headline6: TextStyle(
+                fontFamily: 'OpenSans',
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+              )),
+          appBarTheme: AppBarTheme(
+            textTheme: ThemeData.light().textTheme.copyWith(
+                    headline6: TextStyle(
+                  fontFamily: 'OpenSans',
+                  fontSize: 22,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black,
+                )),
+          )),
       home: MyHomePage(),
     );
   }
