@@ -11,7 +11,8 @@ class TransectionList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 400,
+      margin: EdgeInsets.only(top: 20),
+      height: 550,
       child: ListView.builder(
         itemBuilder: (ctx, index) {
           return Card(

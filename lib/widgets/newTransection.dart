@@ -1,11 +1,18 @@
 import 'package:flutter/material.dart';
 
-class NewTransection extends StatelessWidget {
-  final _titleControler = TextEditingController();
-  final _amountControler = TextEditingController();
+class NewTransection extends StatefulWidget {
   final Function addNewTransection;
 
   NewTransection(this.addNewTransection);
+
+  @override
+  _NewTransectionState createState() => _NewTransectionState();
+}
+
+class _NewTransectionState extends State<NewTransection> {
+  final _titleControler = TextEditingController();
+
+  final _amountControler = TextEditingController();
 
   void submitData() {
     final enteredTitle = _titleControler.text;
@@ -15,11 +22,13 @@ class NewTransection extends StatelessWidget {
     if (enteredTitle.isEmpty || enteredAmount <= 0) return;
 
     // Add a transection
-    addNewTransection(
+    widget.addNewTransection(
       enteredTitle,
       enteredAmount,
       "#DEMO123",
     );
+
+    Navigator.of(context).pop();
   }
 
   @override
