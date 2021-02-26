@@ -1,5 +1,4 @@
 import 'package:Personal_Expense/widgets/transectionList.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 import './widgets/newTransection.dart';
@@ -13,6 +12,10 @@ class PersonalExpense extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Personal Expense',
+      theme: ThemeData(
+        primarySwatch: Colors.amber,
+        accentColor: Colors.amberAccent,
+      ),
       home: MyHomePage(),
     );
   }
@@ -82,13 +85,10 @@ class _MyHomePageState extends State<MyHomePage> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             Card(
-              color: Colors.blue,
+              color: Theme.of(context).accentColor,
               child: Text(
                 'CHART',
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 20,
-                    fontWeight: FontWeight.w500),
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
                 textAlign: TextAlign.center,
               ),
               elevation: 20,

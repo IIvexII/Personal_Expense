@@ -54,7 +54,8 @@ class _NewTransectionState extends State<NewTransection> {
               child: Text(
                 'Add Transection',
                 style: TextStyle(
-                  color: Colors.purple,
+                  color: Theme.of(context).primaryColorDark,
+                  fontSize: 20,
                 ),
               ),
               onPressed: submitData,

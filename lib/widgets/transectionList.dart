@@ -27,14 +27,14 @@ class TransectionList extends StatelessWidget {
                   padding: EdgeInsets.all(15),
                   decoration: BoxDecoration(
                     border: Border.all(
-                      color: Colors.purple,
+                      color: Theme.of(context).primaryColorDark,
                       width: 2,
                     ),
                   ),
                   child: Text(
                     'Rs. ${_userTransections[index].amount}',
                     style: TextStyle(
-                      color: Colors.purple,
+                      color: Theme.of(context).primaryColorDark,
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
                     ),
